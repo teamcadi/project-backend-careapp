@@ -3,6 +3,7 @@ package careapp.projectbackendcareapp.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MainController {
@@ -15,6 +16,12 @@ public class MainController {
     @GetMapping("logIn")
     public String logIn(Model model){
         return "logIn";
+    }
+
+    @PostMapping("signInForm") //post방식으로 받음
+    public String createUser(Model model){
+        //database에 유저 정보 저장
+        return "/";
     }
 
 }
