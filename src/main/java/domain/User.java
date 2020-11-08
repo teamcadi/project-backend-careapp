@@ -9,7 +9,7 @@ package domain;
 public class User {
 
     private Long id; //pk
-    private String user_id;
+    private String userId;
     private String password;
 
     public Long getId() {
@@ -20,12 +20,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getPassword() {

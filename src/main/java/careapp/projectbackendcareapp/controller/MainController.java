@@ -23,7 +23,16 @@ public class MainController {
     public String createUser(@RequestParam("ID") String ID, @RequestParam("password") String password, Model model){
 //        model.addAttribute("name", name);
         //database에 유저 정보 저장
+//        SignIn signIn = new SignIn();
+//        signIn.setUserId(ID);
+//        signIn.setPassword(password);
         return "/";
+    }
+
+    static class SignIn
+    {
+        private String ID;
+        public String getID;
     }
 
 
