@@ -1,10 +1,9 @@
 package careapp.projectbackendcareapp.service;
 
-import domain.User;
+import careapp.projectbackendcareapp.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.MemoryUserRepository;
-import repository.UserRepository;
+import careapp.projectbackendcareapp.repository.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +11,7 @@ import java.util.Optional;
 @Service
 public class UserService {
     private final UserRepository userRepository;
+
     @Autowired
     public UserService(UserRepository userRepository){
         this.userRepository = userRepository;
@@ -21,9 +21,9 @@ public class UserService {
 
     //SignIn
     public Long join(User user){
-        validateDuplicateUser(user);
+        validateDuplicateUser(user); //중복 회원 검증
         userRepository.save(user);
-        return user.getId();
+        return user.getId(); //Id 반환
     }
     private void validateDuplicateUser(User user){
         userRepository.findByUserId(user.getUserId())
@@ -34,7 +34,7 @@ public class UserService {
     public List<User> findUsers() {
         return userRepository.findAll();
     }
-    public Optional<User> findOne(String userId) {
-        return userRepository.findByUserId(userId);
+    public Optional<User> findOne(Long id) {
+        return userRepository.findById(id);
     }
 }

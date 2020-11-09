@@ -1,6 +1,7 @@
-package repository;
+package careapp.projectbackendcareapp.repository;
 
-import domain.User;
+import careapp.projectbackendcareapp.domain.User;
+import careapp.projectbackendcareapp.repository.UserRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

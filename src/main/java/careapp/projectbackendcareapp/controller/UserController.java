@@ -1,7 +1,7 @@
 package careapp.projectbackendcareapp.controller;
 
 import careapp.projectbackendcareapp.service.UserService;
-import domain.User;
+import careapp.projectbackendcareapp.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,17 +15,17 @@ import java.util.List;
 public class UserController {
     private final UserService userService;
 
-    @Autowired
+    @Autowired //의존관계 주입
     public UserController(UserService userService){
         this.userService=userService;
-    }
+    } //spring container에서 userService를 가져옴
 
-    @GetMapping(value = "/signInForm")
-    public String createForm(UserForm form){
-        return "signInForm/createUserForm";
+    @GetMapping(value = "/signIn")
+    public String createForm(){
+        return "Users/createUserForm";
 
     }
-    @PostMapping("/signInForm")
+    @PostMapping(value ="/createUser")
     public String create(UserForm form){
         User user = new User();
         user.setUserId(form.getUserId());
@@ -36,12 +36,12 @@ public class UserController {
     }
 
     
-    //조회기능
-//    @GetMapping("/users")
-//    public String list(Model model){
-//        List<User> users = userService.findUsers();
-//        model.addAttribute("users",users); //addAttrivute 기억해야한다.
-//        return "users/userList";
-//
-//    }
+//    조회기능
+    @GetMapping(value = "/users")
+    public String list(Model model){
+        List<User> users = userService.findUsers();
+        model.addAttribute("users",users); //addAttrivute 기억해야한다.
+        return "Users/userList";
+
+    }
 }

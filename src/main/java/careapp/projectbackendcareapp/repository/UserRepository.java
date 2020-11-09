@@ -1,6 +1,6 @@
-package repository;
+package careapp.projectbackendcareapp.repository;
 //회원 객체를 저장하는 저장소
-import domain.User;
+import careapp.projectbackendcareapp.domain.User;
 
 import java.util.List;
 import java.util.Optional;

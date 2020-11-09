@@ -1,13 +1,16 @@
-package domain;
+package careapp.projectbackendcareapp.domain;
 
 //import jdk.jfr.Enabled;
-//
+
 //import javax.persistence.Entity;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.Id;
+//import javax.persistance.*;
 
+//@Entity
 public class User {
 
+//    @Id @GeneratedValue
     private Long id; //pk
     private String userId;
     private String password;
