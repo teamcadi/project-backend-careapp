@@ -5,14 +5,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import careapp.projectbackendcareapp.repository.UserRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Transactional
+//@Service
 public class UserService {
     private final UserRepository userRepository;
 
-    @Autowired
+//    @Autowired
     public UserService(UserRepository userRepository){
         this.userRepository = userRepository;
     }

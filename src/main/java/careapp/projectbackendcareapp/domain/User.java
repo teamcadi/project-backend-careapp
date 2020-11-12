@@ -2,16 +2,16 @@ package careapp.projectbackendcareapp.domain;
 
 //import jdk.jfr.Enabled;
 
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.Id;
+import javax.persistence.*;
 //import javax.persistance.*;
 
-//@Entity
+@Entity
 public class User {
 
-//    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; //pk
+
+//    @Column(name ="userId")
     private String userId;
     private String password;
 

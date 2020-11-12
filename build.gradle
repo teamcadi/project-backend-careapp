@@ -1,3 +1,6 @@
+//implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+//runtimeOnly 'com.h2database:h2'
+
 plugins {
 	id 'org.springframework.boot' version '2.3.5.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
